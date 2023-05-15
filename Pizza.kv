@@ -1,0 +1,42 @@
+#: import Rectangle kivy.graphics
+
+MainWidget:
+
+<MainWidget>:
+    full_width: self.width
+    full_height: self.height
+    start_button: start_button
+    canvas.before:
+        Rectangle:
+            size: root.size
+            source: "Full-Background.png"
+    Button:
+        id: start_button
+        text: 'Start'
+        size_hint: None, None
+        size: dp(100), dp(50)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        background_color: 0.7, 0.3, 0.1, 1  # Set the button background color
+        on_release: root.start_game(self)
+    Widget:
+        Image:
+            #id: player_rectangle
+            size: root.player_size, root.player_size
+            pos: root.player_x - root.player_size/2, root.player_y
+            source: root.player_image
+    Widget:
+        Label:
+            color: .7, 0, .4
+            pos: (root.width / 60), (root.height / 20 * 17)
+            text: root.text_points_counter
+        Label:
+            color: .7, 0, .4
+            pos: root.width - self.width, (root.height / 20 * 17)
+            text: root.text_life_counter
+    Label:
+        id: game_over_label
+        text: "Game Over"
+        font_size: 50
+        pos_hint: {"center_x": 0.5, "center_y": 0.8}
+        color: 1, 0, 0, 1
+        opacity: 0 
