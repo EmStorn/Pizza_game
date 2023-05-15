@@ -22,7 +22,7 @@ class MainWidget(RelativeLayout):
     player_y = NumericProperty(Window.height / 8)
     player_size = NumericProperty(dp(100))
     player_movement_speed = 15
-    player_image = StringProperty("player_standing1.png")
+    player_image = StringProperty("images/player_standing1.png")
 
     FALLING_SLICES_NUMBER = 7
     FALLING_SLICE_DIMENSION = dp(50)
@@ -58,7 +58,7 @@ class MainWidget(RelativeLayout):
                     Rectangle(
                         pos=(self.falling_slices_x_values[index] , self.falling_slices_y_values[index]),
                         size=(self.FALLING_SLICE_DIMENSION, self.FALLING_SLICE_DIMENSION),
-                        source="pizza_slice_2.png"
+                        source="images/pizza_slice_2.png"
                     )
                 )
 
@@ -105,13 +105,13 @@ class MainWidget(RelativeLayout):
                     rotten = 0
                     self.slice_captured(rotten)
                 self.falling_slices_y_values[slice] = Window.height * 0.8  + random.randint(200, 300)
-                self.block_definitions[slice].source == "pizza_slice_2.png"
+                self.block_definitions[slice].source == "images/pizza_slice_2.png"
                 randomizer = random.randint(0,5)
                 if randomizer == 0:
                     self.rottenator(self.block_definitions[slice])
         else:
             self.falling_slices_y_values[slice] = Window.height * 0.8  + random.randint(200, 300)
-            self.block_definitions[slice].source == "pizza_slice_2.png"
+            self.block_definitions[slice].source == "images/pizza_slice_2.png"
             randomizer = random.randint(0,3)
             if randomizer == 0:
                 self.rottenator(self.block_definitions[slice])
@@ -129,7 +129,7 @@ class MainWidget(RelativeLayout):
 
     # change image of the slice to rotten_slice
     def rottenator(self, slice):
-        slice.source="rotten_pizza_slice_2.png"
+        slice.source="images/rotten_pizza_slice_2.png"
 
     def update(self, dt):
         if self.game_running:

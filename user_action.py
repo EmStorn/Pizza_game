@@ -19,21 +19,21 @@ def on_touch_down(self, touch):
 def on_keyboard_down(self, keyboard, keycode, text, modifiers):
     if keycode[1] == 'left':
         self.player_x -= self.player_movement_speed
-        self.player_image = "player_standing1.png"
-        self.player_image = "player_standing2.png"
-        self.player_image = "player_standing3.png"
-        self.player_image = "player_standing4.png"
+        self.player_image = "images/player_standing1.png"
+        self.player_image = "images/player_standing2.png"
+        self.player_image = "images/player_standing3.png"
+        self.player_image = "images/player_standing4.png"
     elif keycode[1] == 'right':
         self.player_x += self.player_movement_speed
-        self.player_image = "player_standing1.png"
-        self.player_image = "player_standing4.png"
-        self.player_image = "player_standing3.png"
-        self.player_image = "player_standing2.png"
+        self.player_image = "images/player_standing1.png"
+        self.player_image = "images/player_standing4.png"
+        self.player_image = "images/player_standing3.png"
+        self.player_image = "images/player_standing2.png"
     return True
 
 def on_keyboard_up(self, keyboard, keycode):
     self.player_x += 0
-    self.player_image = "player_standing1.png"
+    self.player_image = "images/player_standing1.png"
     return True
 
 def on_touch_up(self, touch):
